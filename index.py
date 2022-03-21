@@ -3,12 +3,9 @@ import sys
 
 link = sys.argv[-1]
 if(type(link) == str and link[0:31] == "https://www.youtube.com/watch?v"):
-    print("ok")
+    yt = YouTube(link)
+    ys = yt.streams.get_highest_resolution()
 
-
-# yt = YouTube(link)
-# ys = yt.streams.get_highest_resolution()
-
-# print("Downloading...")
-# ys.download()
-# print("Video downloaded")
+    print("Downloading...")
+    ys.download()
+    print("Video downloaded")
